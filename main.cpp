@@ -1,8 +1,9 @@
 #include <stdlib.h>
 #include <time.h>
 #include<iostream>
+#include "quickSort.h"
 using namespace std;
-
+/*
 void quickSort(int *array, int low, int high)
 {
     int i = low;
@@ -34,26 +35,29 @@ void printArray(int *array, int n)
 {
     for (int i = 0; i < n; ++i)
         std::cout << array[i] << " ";
-}
-int main()
-{
-    //Ingresar algunas cosas
-    int tam;
-    cout<<"Ingresar Cantidad de Lista: "<<endl;
-    cin>>tam;
-    auto* array=new double[tam];
-    int c;
-    //srand(time(NULL));
-    cout<<"Numeros del arreglo son: "<<endl;
-    for(c = 1; c <= tam; c++)
-    {
-        array[c] = 1 + rand()%100;
+}*/
+int main() {
+    //Al utilizar el array aleatorio no me funciona porque aparece un numero en negativo
 
-        cout <<  array[c]<< " ";
+
+/*
+    auto *array = new int[10];
+
+
+    srand(time(NULL));
+    for (int dav = 1; dav <= 10; dav++) {
+        array[dav] = rand() % 10;
     }
-    quickSort(array,0, tam);
-
-    std::cout << "After Quick Sort :";
-    printArray(array, tam);
-    return 0;
+    //Imprime en orden normal aleatorio
+    print_arr(array,10);
+    */
+    cout << "Numeros del arreglo son: " << endl;
+   int array[13] = {26, 1985, 222, 25, 89, 11, 89, 1993, 69, 29, 1, 13,33};
+    Print_dav(array,13);
+    //dentra al template quick
+   quickSort(array,0, 13-1);
+   //Imprime en orden - a +
+    cout << "Array Ordenado con quickSort: " << endl;
+    Print_dav(array,13);
+   return 0;
 }
